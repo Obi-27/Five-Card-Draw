@@ -1,4 +1,4 @@
-package tests;
+package tests.Evaluator;
 
 import java.util.Arrays;
 import model.*;
