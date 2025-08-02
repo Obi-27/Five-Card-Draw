@@ -21,6 +21,12 @@ public class FiveCardDrawEvaluator {
         HIGH_CARD;
     }
 
+    /**
+     * This method converts a card to its value for the game FiveCardDraw (Ace High)
+     * 
+     * @ param card the current card
+     * @ return the value of the card
+     */
     private static int getCardValue(Card card) {
         int value;
         switch (card.getRank()) {
@@ -42,9 +48,15 @@ public class FiveCardDrawEvaluator {
         return value;
     }
 
+
+    /**
+     *This method calculates the strength of a given hand
+     *
+     * @param Hand the players hand
+     * @return the rank of the hand
+     */
     public static Ranks evaluateHand(Hand hand) {
         List<Card> cards = hand.getCards();
-
         Map<Card.Rank, Integer> rankCount = new HashMap<>();
         Map<Card.Suit, Integer> suitCount = new HashMap<>();
         List<Integer> cardValues = new ArrayList<>();
@@ -58,6 +70,7 @@ public class FiveCardDrawEvaluator {
 
         boolean isFlush = suitCount.size() == 1;
 
+        //sort values in order and check for consecutive rank
         Collections.sort(cardValues);
         boolean isStraight = true;
         for(int i = 1; i < cardValues.size(); i++) {
@@ -67,7 +80,7 @@ public class FiveCardDrawEvaluator {
             }
         }
 
-
+        //Check hand strength from best to worst
         if(isStraight && isFlush) return Ranks.STRAIGHT_FLUSH;
         if(rankCount.containsValue(4)) return Ranks.FOUR_OF_A_KIND;
         if(rankCount.containsValue(3) && rankCount.containsValue(2)) return Ranks.FULL_HOUSE;

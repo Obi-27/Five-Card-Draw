@@ -37,6 +37,20 @@ elif [ "$1" == "-test" ]; then
     execute \
     --class-path bin \
     --scan-class-path
+elif [ "$1" == "help" ]; then
+  echo "Usage: ./run.sh [OPTION]"
+  echo
+  echo "Options:"
+  echo "  FiveCardDraw    Run the Five Card Draw poker game (default)"
+  echo "  -test           Compile and run all unit tests using JUnit 5"
+  echo "  -help           Show this help message and exit"
+  echo
+  echo "Examples:"
+  echo "  ./run.sh               Run the default poker game"
+  echo "  ./run.sh FiveCardDraw  Run the poker game explicitly"
+  echo "  ./run.sh -test         Run unit tests"
+  echo "  ./run.sh -help         Show help instructions"
+  exit 0
 fi
 
 
