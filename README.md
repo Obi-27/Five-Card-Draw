@@ -19,3 +19,5 @@ chmod +x run.sh
 ./run.sh
 ### Run unit tests
 ./run.sh -test
+### Confused? get help
+./run.sh help
