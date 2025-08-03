@@ -8,6 +8,10 @@ import java.util.Map;
 
 import model.*;
 
+
+/*
+ * THis class provides a method to evaluate hands according to the rules of Five Card Draw
+ */
 public class FiveCardDrawEvaluator {
     public enum Ranks {
         STRAIGHT_FLUSH,

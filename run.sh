@@ -22,7 +22,7 @@ javac -cp "$JUNIT_JAR:$BIN_DIR" -d "$BIN_DIR" @test_sources.txt
 
 if [ "$#" -eq 0 ] || [ "$1" == "FiveCardDraw" ]; then
   #run the game
-  java -cp "$BIN_DIR" Main
+  java -cp "$BIN_DIR" Main FiveCardDraw
 
 elif [ "$1" == "-test" ]; then
 
@@ -43,7 +43,7 @@ elif [ "$1" == "help" ]; then
   echo "Options:"
   echo "  FiveCardDraw    Run the Five Card Draw poker game (default)"
   echo "  -test           Compile and run all unit tests using JUnit 5"
-  echo "  -help           Show this help message and exit"
+  echo "  help           Show this help message and exit"
   echo
   echo "Examples:"
   echo "  ./run.sh               Run the default poker game"
@@ -51,6 +51,10 @@ elif [ "$1" == "help" ]; then
   echo "  ./run.sh -test         Run unit tests"
   echo "  ./run.sh -help         Show help instructions"
   exit 0
+
+else
+echo "Unknown command type \"./run.sh help\" for help"
+
 fi
 
 

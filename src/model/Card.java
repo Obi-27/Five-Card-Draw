@@ -1,6 +1,10 @@
 package model;
 
 
+/*
+ * This class represents a card object
+ * It stores information about a cards suit and rank
+ */
 public class Card {
     public enum Suit {
         CLUBS,

@@ -2,6 +2,11 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/*
+ * This class represents a players hand
+ * it contains the cards a player currently has
+ */
 public class Hand {
     private final List<Card> cards;
 
